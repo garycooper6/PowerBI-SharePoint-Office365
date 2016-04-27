@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PowerBI_Office365Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ClientID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">7f533dd7-3dec-40a7-ad4d-e6ca5133fb03</Value>
+    </Setting>
+    <Setting Name="ClientSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">vp6+qYE/8IL+b3riEAfmiz0bFL1vQ/r/lpudg5/QS7c=</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
