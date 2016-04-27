@@ -39,6 +39,13 @@
     <div>
         <asp:Button Text="Sign in" OnClick="SignInButton_Click" runat="server" />
     </div>      
+        <em>Dashboards</em>
+        <asp:DropDownList runat="server" ID="DashboardsList" AutoPostBack="true" OnSelectedIndexChanged="DashboardsList_SelectedIndexChanged" DataTextField="displayName" DataValueField="id" />
+        <br />
+        <em>Tiles</em>
+        <asp:DropDownList runat="server" ID="TilesList" AutoPostBack="true" OnSelectedIndexChanged="TilesList_SelectedIndexChanged" DataTextField="title" DataValueField="embedUrl" />
+            
+        <br />
         <iframe id="powerBiFrame" onload="postActionLoadTile()" height="800" width="600" src="<%=PowerBIEmbedUrl %>" />        
         
         <asp:Panel ID="signinStatus" runat="server" Visible="false">

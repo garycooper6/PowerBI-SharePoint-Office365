@@ -35,10 +35,14 @@ namespace PowerBI_Office365Web
                 userLabel.Text = authResult.UserInfo.DisplayableId;
                 accessTokenTextbox.Text = authResult.AccessToken;
 
-                var dashboards = GetDashboards();
-                var tiles = GetTiles(dashboards.value.First().id);
-                this.responseTextBox.Text = tiles.value[0].embedUrl;
-                this.PowerBIEmbedUrl = tiles.value[0].embedUrl;
+                if (!Page.IsPostBack)
+                {
+                    var dashboards = GetDashboards();
+                    this.DashboardsList.DataSource = dashboards.value;
+                    this.DashboardsList.DataBind();
+                    this.DashboardsList.Items.Insert(0, new ListItem("---", ""));
+                }
+
             }
         }
 
@@ -96,6 +100,22 @@ namespace PowerBI_Office365Web
             //Authority Uri is an Azure resource that takes a client id to get an Access token
             string authorityUri = "https://login.windows.net/common/oauth2/authorize/";
             Response.Redirect(String.Format("{0}?{1}", authorityUri, queryString));
+        }
+
+        protected void DashboardsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //var tiles = GetTiles(dashboards.value.First().id);
+            var tiles = GetTiles(this.DashboardsList.SelectedValue);
+            this.TilesList.DataSource = tiles.value;
+            this.TilesList.DataBind();
+            this.TilesList.Items.Insert(0, new ListItem("---", ""));
+            //this.PowerBIEmbedUrl = tiles.value[0].embedUrl;
+        }
+
+        protected void TilesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.PowerBIEmbedUrl = this.TilesList.SelectedValue;
         }
     }
 }

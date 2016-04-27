@@ -6,7 +6,7 @@ using System.Web;
 
 namespace PowerBI_Office365Web.Models
 {
-    public class Value
+    public class DashboardsResponseValue
     {
         public string id { get; set; }
         public string displayName { get; set; }
@@ -17,6 +17,6 @@ namespace PowerBI_Office365Web.Models
     {
         [JsonProperty(PropertyName = "__@odata.context")]
         public string context{ get; set; }
-        public List<Value> value { get; set; }
+        public List<DashboardsResponseValue> value { get; set; }
     }
 }
