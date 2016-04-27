@@ -104,13 +104,10 @@ namespace PowerBI_Office365Web
 
         protected void DashboardsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            //var tiles = GetTiles(dashboards.value.First().id);
             var tiles = GetTiles(this.DashboardsList.SelectedValue);
             this.TilesList.DataSource = tiles.value;
             this.TilesList.DataBind();
-            this.TilesList.Items.Insert(0, new ListItem("---", ""));
-            //this.PowerBIEmbedUrl = tiles.value[0].embedUrl;
+            this.TilesList.Items.Insert(0, new ListItem("---", ""));            
         }
 
         protected void TilesList_SelectedIndexChanged(object sender, EventArgs e)
