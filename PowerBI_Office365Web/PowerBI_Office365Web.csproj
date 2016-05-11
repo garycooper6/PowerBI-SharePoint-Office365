@@ -138,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="powerbiwebpart.webpart">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,6 +169,7 @@
     </Compile>
     <Compile Include="Models\DashboardsResponse.cs" />
     <Compile Include="Models\DashboardTileResponse.cs" />
+    <Compile Include="Models\ReportsResponse.cs" />
     <Compile Include="Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
